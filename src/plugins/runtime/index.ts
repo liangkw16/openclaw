@@ -144,6 +144,22 @@ import {
 } from "../../line/send.js";
 import { monitorLineProvider } from "../../line/monitor.js";
 import { buildTemplateMessageFromPayload } from "../../line/template-messages.js";
+import {
+  listLarkAccountIds,
+  normalizeAccountId as normalizeLarkAccountId,
+  resolveDefaultLarkAccountId,
+  resolveLarkAccount,
+} from "../../lark/accounts.js";
+import { probeLarkBot } from "../../lark/probe.js";
+import {
+  sendMessageLark,
+  replyMessageLark,
+  sendImageLark,
+  sendInteractiveCardLark,
+  sendPostLark,
+  uploadImageLark,
+} from "../../lark/send.js";
+import { monitorLarkProvider } from "../../lark/monitor.js";
 
 import type { PluginRuntime } from "./types.js";
 
@@ -336,6 +352,20 @@ export function createPluginRuntime(): PluginRuntime {
         createQuickReplyItems,
         buildTemplateMessageFromPayload,
         monitorLineProvider,
+      },
+      lark: {
+        listLarkAccountIds,
+        resolveDefaultLarkAccountId,
+        resolveLarkAccount,
+        normalizeAccountId: normalizeLarkAccountId,
+        probeLarkBot,
+        sendMessageLark,
+        replyMessageLark,
+        sendImageLark,
+        sendInteractiveCardLark,
+        sendPostLark,
+        uploadImageLark,
+        monitorLarkProvider,
       },
     },
     logging: {

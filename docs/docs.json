@@ -126,6 +126,22 @@
       "destination": "/channels/mattermost"
     },
     {
+      "source": "/lark",
+      "destination": "/channels/lark"
+    },
+    {
+      "source": "/lark/",
+      "destination": "/channels/lark"
+    },
+    {
+      "source": "/feishu",
+      "destination": "/channels/lark"
+    },
+    {
+      "source": "/feishu/",
+      "destination": "/channels/lark"
+    },
+    {
       "source": "/line",
       "destination": "/channels/line"
     },
@@ -1007,6 +1023,7 @@
           "channels/imessage",
           "channels/msteams",
           "channels/line",
+          "channels/lark",
           "channels/matrix",
           "channels/zalo",
           "channels/zalouser",

@@ -168,6 +168,21 @@ type BuildTemplateMessageFromPayload =
   typeof import("../../line/template-messages.js").buildTemplateMessageFromPayload;
 type MonitorLineProvider = typeof import("../../line/monitor.js").monitorLineProvider;
 
+// Lark channel types
+type ListLarkAccountIds = typeof import("../../lark/accounts.js").listLarkAccountIds;
+type ResolveDefaultLarkAccountId =
+  typeof import("../../lark/accounts.js").resolveDefaultLarkAccountId;
+type ResolveLarkAccount = typeof import("../../lark/accounts.js").resolveLarkAccount;
+type NormalizeLarkAccountId = typeof import("../../lark/accounts.js").normalizeAccountId;
+type ProbeLarkBot = typeof import("../../lark/probe.js").probeLarkBot;
+type SendMessageLark = typeof import("../../lark/send.js").sendMessageLark;
+type ReplyMessageLark = typeof import("../../lark/send.js").replyMessageLark;
+type SendImageLark = typeof import("../../lark/send.js").sendImageLark;
+type SendInteractiveCardLark = typeof import("../../lark/send.js").sendInteractiveCardLark;
+type SendPostLark = typeof import("../../lark/send.js").sendPostLark;
+type UploadImageLark = typeof import("../../lark/send.js").uploadImageLark;
+type MonitorLarkProvider = typeof import("../../lark/monitor.js").monitorLarkProvider;
+
 export type RuntimeLogger = {
   debug?: (message: string) => void;
   info: (message: string) => void;
@@ -346,6 +361,20 @@ export type PluginRuntime = {
       createQuickReplyItems: CreateQuickReplyItems;
       buildTemplateMessageFromPayload: BuildTemplateMessageFromPayload;
       monitorLineProvider: MonitorLineProvider;
+    };
+    lark: {
+      listLarkAccountIds: ListLarkAccountIds;
+      resolveDefaultLarkAccountId: ResolveDefaultLarkAccountId;
+      resolveLarkAccount: ResolveLarkAccount;
+      normalizeAccountId: NormalizeLarkAccountId;
+      probeLarkBot: ProbeLarkBot;
+      sendMessageLark: SendMessageLark;
+      replyMessageLark: ReplyMessageLark;
+      sendImageLark: SendImageLark;
+      sendInteractiveCardLark: SendInteractiveCardLark;
+      sendPostLark: SendPostLark;
+      uploadImageLark: UploadImageLark;
+      monitorLarkProvider: MonitorLarkProvider;
     };
   };
   logging: {

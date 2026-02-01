@@ -369,5 +369,21 @@ export {
 } from "../line/markdown-to-line.js";
 export type { ProcessedLineMessage } from "../line/markdown-to-line.js";
 
+// Channel: Lark (Feishu)
+export {
+  listLarkAccountIds,
+  normalizeAccountId as normalizeLarkAccountId,
+  resolveDefaultLarkAccountId,
+  resolveLarkAccount,
+} from "../lark/accounts.js";
+export { LarkConfigSchema } from "../lark/config-schema.js";
+export type {
+  LarkConfig,
+  LarkAccountConfig,
+  ResolvedLarkAccount,
+  LarkChannelData,
+  LarkDomain,
+} from "../lark/types.js";
+
 // Media utilities
 export { loadWebMedia, type WebMediaResult } from "../web/media.js";
