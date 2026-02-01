@@ -71,7 +71,21 @@ export LARK_APP_ID="cli_your_app_id"
 export LARK_APP_SECRET="your_app_secret"
 ```
 
-### 5. Start the Gateway
+### 7. Verify Configuration
+
+```bash
+# Check current configuration
+openclaw config get channels.lark
+
+# Expected output:
+# {
+#   "appId": "cli_your_app_id",
+#   "appSecret": "your_app_secret",
+#   "enabled": true
+# }
+```
+
+### 8. Start the Gateway
 
 ```bash
 openclaw gateway run
@@ -272,7 +286,10 @@ channels:
 ### Text Messages
 
 ```bash
-openclaw message send --to "oc_chat_id" --message "Hello from OpenClaw!"
+openclaw message send --target "lark:oc_chat_id" --message "Hello from OpenClaw!"
+
+# Or send to a user by open_id
+openclaw message send --target "lark:ou_user_open_id" --message "Hello!"
 ```
 
 ### Programmatic Usage
